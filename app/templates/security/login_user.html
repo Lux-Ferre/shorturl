@@ -19,8 +19,8 @@
 {% block content %}
     <div class="justify-content-center align-items-center" style="height:inherit;">
         <div id="login_form" class="justify-content-center">
-            {% include "security/_messages.html" %}
             <form action="{{ url_for_security('login') }}{{ prop_next() }}" method="post" name="login_user_form" class="row">
+                <div class="col-12">{% include "security/_messages.html" %}</div>
                 <div class="col-12">{{ login_user_form.hidden_tag() }}</div>
                 <div class="col-12">{{ render_form_errors(login_user_form) }}</div>
                 <div class="col-12">{{ render_field_with_errors(login_user_form.email) }}</div>
@@ -28,6 +28,8 @@
                 <div class="col-12">{{ render_field_with_errors(login_user_form.remember) }}</div>
                 <div class="col-12">{{ render_field_errors(login_user_form.csrf_token) }}</div>
                 <div class="col-12 justify-content-center">{{ render_field(login_user_form.submit) }}</div>
+
+                <div class="col-12"><a href="{{ url_for('security.register') }}">Register new account.</a></div>
             </form>
         </div>
     </div>
