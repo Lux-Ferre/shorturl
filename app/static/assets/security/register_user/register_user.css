@@ -1,0 +1,5 @@
+#register_form{
+    width: clamp(200px, 35%, 450px);
+    height: clamp(100px, 50vh, 80vh);
+    border: teal outset 2px;
+}

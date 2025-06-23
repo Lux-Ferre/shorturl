@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='assets/main/dashboard/dashboard.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+    <div class="spacer" style="height: 50px;"></div>
+    <div class="justify-content-center">
+        <div class="container" style="width: 50%">
+            <div class="row">
+                <div class="col-3">Short Link (Leave blank for random)</div>
+                <div class="col"><input id="short_link" type="text" class="w-100"></div>
+            </div>
+            <div class="row">
+                <div class="col-3">Full Link (Must contain scheme (eg https))</div>
+                <div class="col"><input id="full_link" type="text" class="w-100"></div>
+            </div>
+            <div class="row">
+                <div class="col justify-content-center"><input id="add_link_button" type="button" value="Submit"></div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer" style="height: 50px;"></div>
+    <div class="justify-content-center">
+        <table id="url_table" style="width: 80%">
+            <tr>
+                <th>Short URL</th>
+                <th>Full URL</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{{ url_for('static', filename='assets/main/dashboard/dashboard.js') }}"></script>
+{% endblock %}

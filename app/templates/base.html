@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+	<head>
+	{% block head %}
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Lux Link - URL Shortening Service">
+        <meta name="keyword" content="webapp, url shortening">
+        <meta property="og:title" content="Lux Link"/>
+        <meta property="og:description" content="Lux Link - URL Shortening Service" />
+        <meta property="og:image" content="{{ url_for('static', filename='assets/base/favicon.png') }}"/>
+        <meta property="og:url" content="" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Lux Link" />
+        <meta name="twitter:description" content="Lux link"/>
+        <meta name="twitter:image" content="{{ url_for('static', filename='assets/base/favicon.png') }}"/>
+
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/base/favicon.png') }}">
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='libraries/luxgrid/luxgrid.min.css') }}">
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/base/base.css') }}">
+
+		<title>Lux Link - {% block title %}{% endblock %}</title>
+	{% endblock %}
+	</head>
+	<body>
+        {% block navbar %}
+            <nav class="navbar justify-content-between w-100">
+                <a class="navbar-brand align-items-center" href="{{ url_for('main.index') }}">
+                    <img src="{{ url_for('static', filename='assets/base/favicon.png') }}" alt="" height="30" width="30">
+                    Home
+                </a>
+                <ul class="nav-links align-items-center">
+                    {% if logged_in %}
+                        <li><a href="{{ url_for('main.dashboard') }}">Dashboard</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('security.login') }}">Login</a></li>
+                    {% endif %}
+                    {% if is_admin %}
+                        <li><a href="{{ url_for('main.admin') }}">Admin</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        {% endblock %}
+
+        <div id="content">{% block content %}{% endblock %}</div>
+
+        {% block scripts %}
+        <!-- Internal JS files -->
+        <script src="{{ url_for('static', filename='assets/base/colour_mode.js') }}" type="module"></script>
+        <script src="{{ url_for('static', filename='assets/base/base.js') }}" type="module"></script>
+        {% endblock %}
+	</body>
+</html>

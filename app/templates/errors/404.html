@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='assets/errors/404/404.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}404{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col text-center">
+        <h1>404</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <p>The page you are looking for cannot be found. :c</p>
+    </div>
+</div>
+{% endblock %}

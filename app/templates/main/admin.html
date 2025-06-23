@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block head %}
+    {{ super() }}
+    <link href="{{ url_for('static', filename='assets/main/admin/admin.css') }}" rel="stylesheet">
+{% endblock %}
+{% block title %}Admin Panel{% endblock %}
+{% block content %}
+    <div class="spacer" style="height: 50px;"></div>
+    <div class="justify-content-center">
+        <div id="user_table" class="w-75"></div>
+    </div>
+    <template id="user_template">
+        <div class="table_row row justify-content-around align-items-center" data-user-id="">
+            <div class="table_cell user_email col-10"></div>
+            <div class="table_cell interaction">
+                <span class="interact_button approve_user">✔️</span>
+                <span class="interact_button delete_user">❌</span>
+            </div>
+        </div>
+    </template>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{{ url_for('static', filename='assets/main/admin/admin.js') }}"></script>
+{% endblock %}
