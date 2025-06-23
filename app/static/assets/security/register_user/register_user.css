@@ -1,5 +1,6 @@
 #register_form{
     width: clamp(350px, 38%, 95vw);
     height: clamp(100px, 50vh, 80vh);
-    border: teal outset 2px;
+    border: #005050 outset 2px;
+    background-color: rgba(128, 128, 128, 0.05);
 }
