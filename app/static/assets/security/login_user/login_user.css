@@ -1,5 +1,5 @@
 #login_form{
-    width: clamp(200px, 35%, 450px);
+    width: clamp(350px, 38%, 95vw);
     height: clamp(100px, 50vh, 80vh);
     border: teal outset 2px;
 }
