@@ -40,6 +40,9 @@
                     {% if is_admin %}
                         <li><a href="{{ url_for('main.admin') }}">Admin</a></li>
                     {% endif %}
+                    {% if logged_in %}
+                        <li><a href="{{ url_for('security.logout') }}">Logout</a></li>
+                    {% endif %}
                 </ul>
             </nav>
         {% endblock %}
