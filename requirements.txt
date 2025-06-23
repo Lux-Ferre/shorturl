@@ -6,3 +6,4 @@ argon2_cffi
 dotenv
 requests
 shortuuid
+gunicorn
