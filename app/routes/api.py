@@ -43,7 +43,7 @@ def add_link():
         return jsonify({"error_code": "AL-F-001", "error_message": "Full URL is required."}), 400
 
     if not (full_url.startswith("http://") or full_url.startswith("https://")):
-        return jsonify({"error_code": "AL-F-002", "error_message": "Full URL invalid: Must contain scheme (eg https://)"}), 400
+        full_url = "https://" + full_url
 
     if short_url is not None and short_url != "":
         if len(short_url) < 1 or len(short_url) > 50:
