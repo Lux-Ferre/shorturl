@@ -9,12 +9,12 @@
     <div class="justify-content-center">
         <div class="container" style="width: 50%">
             <div class="row">
-                <div class="col-3">Short Link (Leave blank for random)</div>
-                <div class="col"><input id="short_link" type="text" class="w-100"></div>
+                <div class="col-3">Short URL Suffix</div>
+                <div class="col"><input id="short_link" type="text" class="w-100 link_input" placeholder="generate for me"></div>
             </div>
             <div class="row">
-                <div class="col-3">Full Link (Must contain scheme (eg https))</div>
-                <div class="col"><input id="full_link" type="text" class="w-100"></div>
+                <div class="col-3">Full Link</div>
+                <div class="col"><input id="full_link" type="text" class="w-100 link_input"></div>
             </div>
             <div class="row">
                 <div class="col justify-content-center"><input id="add_link_button" type="button" value="Submit"></div>
@@ -24,9 +24,9 @@
     <div class="spacer" style="height: 50px;"></div>
     <div class="justify-content-center">
         <table id="url_table" style="width: 80%">
-            <tr>
+            <tr class="table_head">
                 <th>Short URL</th>
-                <th>Full URL</th>
+                <th style="border-left: 1px solid #444;">Full URL</th>
             </tr>
         </table>
     </div>

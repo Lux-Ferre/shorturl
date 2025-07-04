@@ -13,6 +13,7 @@ body {
 .navbar {
 	border-bottom: gray 1px outset;
 	height: 50px;
+
 }
 
 .navbar-brand img {
@@ -20,12 +21,12 @@ body {
 }
 
 .navbar a {
-	color: inherit;
+	color: inherit !important;
 	text-decoration: none;
 }
 
 .navbar a:hover{
-	color: cadetblue;
+	color: #3f69fc !important;
 }
 
 .nav-links {

@@ -3,3 +3,58 @@
     opacity: 0.5;
     cursor: default;
 }
+
+[data-theme="dark"] .short_link:visited {
+    color: #6386ff;
+}
+
+[data-theme="dark"] .short_link:visited:hover {
+    color: #3f69fc;
+}
+
+
+.short_link:visited {
+    color: #6386ff;
+}
+
+.short_link:visited:hover {
+    color: #3f69fc;
+}
+
+.link_input{
+    border-radius: 10px;
+    padding-left: 10px;
+    height: 2em;
+}
+
+input{
+    box-shadow: 0 0 3px 3px rgba(177,27,191,0.1);
+}
+
+#add_link_button{
+    border-radius: 10px;
+    height: 4em;
+    width: 12em;
+    margin-top: 1em;
+    cursor: pointer;
+}
+
+#url_table{
+    border: 1px outset #302630;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.table_head{
+    border-bottom: 2px solid #666;
+}
+
+table td + td {
+    border-left: 1px solid #444;
+}
+
+table td{
+    padding-left: 5px;
+}

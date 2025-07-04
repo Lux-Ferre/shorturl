@@ -29,19 +29,29 @@ class Dashboard {
 
     display_links(links){
         const table = document.getElementById("url_table");
+        const origin = window.location.origin
+
         for (const [short, full] of Object.entries(links)) {
             const row = table.insertRow();
 
             const short_cell = row.insertCell(0);
             const full_cell = row.insertCell(1);
 
-            short_cell.textContent = short;
+            const short_url = `${origin}/l/${short}`
 
-            const anchor = document.createElement("a");
-            anchor.href = full;
-            anchor.textContent = full;
-            anchor.target = "_blank"; // optional: open link in new tab
-            full_cell.appendChild(anchor);
+            let short_anchor = document.createElement("a")
+            short_anchor.classList.add("short_link")
+            short_anchor.href = short_url
+            short_anchor.textContent = short_url
+            short_anchor.target = "_blank"
+            short_cell.appendChild(short_anchor)
+
+            const full_url = `${full}`
+            const full_anchor = document.createElement("a")
+            full_anchor.href = full_url
+            full_anchor.textContent = full_url
+            full_anchor.target = "_blank"
+            full_cell.appendChild(full_anchor)
         }
     }
 
